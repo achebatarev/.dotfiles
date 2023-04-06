@@ -1,0 +1,8 @@
+[user]
+    email = alexandr.chebatarev@gmail.com
+    name = Alexandr Chebatarev 
+[init]
+    defaultBranch = main
+[safe]
+	directory = * 
+
