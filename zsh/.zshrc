@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 M2_HOME='/opt/apache-maven-3.6.3'
 PATH="$M2_HOME/bin:$PATH"
 export PATH
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+export JAVA_HOME=/usr/lib/jvm/java-19-openjdk/
 export PATH="$HOME/.local/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
