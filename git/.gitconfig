@@ -1,8 +1,15 @@
 [user]
     email = alexandr.chebatarev@gmail.com
     name = Alexandr Chebatarev 
+[core]
+    eol = lf
+    filemode = true
+    editor = vim
 [init]
     defaultBranch = main
 [safe]
 	directory = * 
+[alias]
+    logdog = log --decorate --oneline --graph
+    cf = cat-file -p
 

@@ -125,6 +125,9 @@ mkcd ()
 
 alias bat="batcat"
 alias vim="nvim"
+alias start="./build.sh fake;docker run --rm -it fake bash"
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
