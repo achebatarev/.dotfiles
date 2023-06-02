@@ -2,11 +2,10 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    'sumneko_lua',
-    'gopls',
+    'lua_ls',
 })
 
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -38,7 +37,8 @@ lsp.on_attach(function(client, bufnr)
     --[[  if client.name == "eslint" then
       vim.cmd.LspStop('eslint')
       return
-  end ]] --
+  end ]]
+    --
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -71,7 +71,6 @@ lsp.on_attach(function(client, bufnr)
                 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
             augroup END
         ]])
-
 end)
 
 -- organize imports
@@ -113,4 +112,5 @@ lsp.setup()
             usePlaceholders = true,
         },
     },
-} ]] --
+} ]]
+--
