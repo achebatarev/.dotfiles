@@ -2,11 +2,10 @@ local lsp = require('lsp-zero')
 lsp.preset('recommended')
 
 lsp.ensure_installed({
-    'sumneko_lua',
-    'gopls',
+    'lua_ls',
 })
 
-lsp.configure('sumneko_lua', {
+lsp.configure('lua_ls', {
     settings = {
         Lua = {
             diagnostics = {
@@ -38,7 +37,7 @@ lsp.on_attach(function(client, bufnr)
     --[[  if client.name == "eslint" then
       vim.cmd.LspStop('eslint')
       return
-  end ]] --
+  end ]]
 
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -64,14 +63,14 @@ lsp.on_attach(function(client, bufnr)
     -- in order for pcall to work I need to rewrite this command in lua
     -- FIX: Rewrite using lua syntax
     -- TODO: separate vim cmds one by one
-    local ok, result = pcall(vim.cmd, [[
-            augroup lsp_document_highlight
-                autocmd! * <buffer>
-                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-            augroup END
-        ]])
-
+    --    local ok, result = pcall(vim.cmd, [[
+    --            augroup lsp_document_highlight
+    --                autocmd! * <buffer>
+    --                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+    --                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    --            augroup END
+    --        ]])
+    --
 end)
 
 -- organize imports
@@ -113,4 +112,9 @@ lsp.setup()
             usePlaceholders = true,
         },
     },
-} ]] --
+} ]]
+<<<<<<< Updated upstream
+--
+=======
+     --
+>>>>>>> Stashed changes

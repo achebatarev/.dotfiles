@@ -41,7 +41,7 @@ local plugins = {
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "catppuccin/nvim",                 name = "catppuccin" },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate', event = { "BufReadPost", "BufNewFile" } },
     { 'ThePrimeagen/harpoon' },
     -- todo comments
     {

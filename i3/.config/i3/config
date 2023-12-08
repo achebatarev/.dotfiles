@@ -6,7 +6,7 @@
 #
 # To get a config file with the same key positions, but for your current
 # layout, use the i3-config-wizard
-set $mod Mod1
+set $mod Mod4
 
 set $text_color "f3f4f5"
 set $bg_color "2f343f"
