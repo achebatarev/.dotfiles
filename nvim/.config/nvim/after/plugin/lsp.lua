@@ -113,8 +113,3 @@ lsp.setup()
         },
     },
 } ]]
-<<<<<<< Updated upstream
---
-=======
-     --
->>>>>>> Stashed changes
