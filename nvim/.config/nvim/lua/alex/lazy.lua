@@ -62,7 +62,15 @@ local plugins = {
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'kyazdani42/nvim-web-devicons', lazy = true }
-    }
+    },
+
+    -- Debugging
+    -- debugpy needs to be install for python to work
+    { "mfussenegger/nvim-dap" },
+    { "rcarriga/nvim-dap-ui" },
+    { "mfussenegger/nvim-dap-python" },
+    { "theHamsta/nvim-dap-virtual-text" }
+
 
 }
 

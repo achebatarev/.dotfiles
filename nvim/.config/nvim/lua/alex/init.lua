@@ -1,4 +1,5 @@
 print("Sekiro, shadows die twice")
+print("REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE")
 require("alex.remap")
 require("alex.set")
 require("alex.lazy")
