@@ -10,18 +10,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
-local plugins = {
-    -- todo comments
-    -- MarkDown Preview
-
-    -- Buffer navigation
-
-    -- Debugging
-
-
-}
-
 require("lazy").setup(
     {
         { import = 'alex.plugins' },
