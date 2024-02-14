@@ -148,3 +148,9 @@ unset __conda_setup
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias pac='sudo pacman -S'   # install
+alias pacu='sudo pacman -Syu'    # update, add 'a' to the list of letters to update AUR packages if you use yaourt
+alias pacr='sudo pacman -Rs'   # remove
+alias pacs='sudo pacman -Ss'      # search
+alias paci='sudo pacman -Si'      # info

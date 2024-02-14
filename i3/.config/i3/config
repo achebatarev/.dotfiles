@@ -10,6 +10,7 @@ set $mod Mod4
 
 set $text_color "f3f4f5"
 set $bg_color "2f343f"
+set $rofi_config_path "/home/alex/.config/rofi/config.rasi"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -61,7 +62,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+l focus right
+#bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -228,7 +229,7 @@ exec_always xrandr --output HDMI-1-1 --auto --right-of eDP-1-1
 
 #exec_always ./home/alex/.config/i3/screen_fix.sh
 
-bindsym $mod+Shift+x exec i3lock-fancy
+bindsym $mod+l exec i3lock-fancy
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5% 
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
@@ -249,8 +250,8 @@ exec_always picom --fade-in-step=1 --fade-out-step=1 --fade-delta=0
 
 bindsym Print       exec flameshot screen -n 0 -c
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "10" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text_color" -hlbg "$bg_color" -hlfg "#9575cd"
+#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opacity "10" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text_color" -hlbg "$bg_color" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show run config $rofi_config_path 
 
 exec_always setxkbmap -layout us,ru
 exec_always setxkbmap -option 'grp:ctrl_capslock_toggle' 
