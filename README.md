@@ -6,7 +6,6 @@ This is a repos that features my configuration for tools I use
 
 ### Neovim
 
-- [ ] Fix debugging with the new lazy config
 - [ ] Allow to debug in docker container
 - [ ] Simplify git push/pull to/from a new branch and git checkout
 - [ ] Allow to configure linters and formatters and type checkers

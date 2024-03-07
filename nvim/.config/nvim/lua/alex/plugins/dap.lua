@@ -1,13 +1,14 @@
 return { -- debugpy needs to be install for python to work
-    { "mfussenegger/nvim-dap" },
+    "mfussenegger/nvim-dap",
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         { "rcarriga/nvim-dap-ui" },
-        { "mfussenegger/nvim-dap-python" },
+
         { "theHamsta/nvim-dap-virtual-text" },
+        { "mfussenegger/nvim-dap-python" },
     },
     config = function()
         local dap = require('dap')
-
         dap.configurations.python = {
             {
                 -- The first three options are required by nvim-dap
