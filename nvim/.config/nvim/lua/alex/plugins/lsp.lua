@@ -21,8 +21,7 @@ return {
     },
     config = function()
         local lsp_zero = require('lsp-zero')
-
-        lsp_zero.on_attach(function(client, bufnr)
+        local on_attach = function(client, bufnr)
             local opts = { buffer = bufnr, remap = false }
             vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -34,7 +33,9 @@ return {
             -- vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
             vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
             vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-        end)
+        end
+
+        lsp_zero.on_attach(on_attach)
 
         require('mason').setup({})
         require('mason-lspconfig').setup({
@@ -69,6 +70,23 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
         })
+        local nvim_lsp = require('lspconfig')
+        require('lspconfig').gdscript.setup{}
+
+        local name = 'gdscript'
+        local cmd = vim.lsp.rpc.connect('127.0.0.1', 6005)
+        if not name then
+          print 'You have not defined a server name, please edit minimal_init.lua'
+        end
+        if not nvim_lsp[name].document_config.default_config.cmd and not cmd then
+          print [[You have not defined a server default cmd for a server
+            that requires it please edit minimal_init.lua]]
+        end
+
+        nvim_lsp[name].setup {
+          cmd = cmd,
+          on_attach = on_attach,
+        }
 
     end,
 }
