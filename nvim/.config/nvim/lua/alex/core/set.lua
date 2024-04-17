@@ -15,12 +15,13 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
+
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 9
 -- vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 vim.opt.signcolumn = "yes"
@@ -33,4 +34,13 @@ vim.opt.mouse = "a"
 vim.opt.cursorline = true
 vim.opt.ma = true
 
+
+
 vim.g.mapleader = " "
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+group = vim.api.nvim_create_augroup("highlight-yank", {clear = true}),
+callback = function ()
+   vim.highlight.on_yank()
+end,
+})
