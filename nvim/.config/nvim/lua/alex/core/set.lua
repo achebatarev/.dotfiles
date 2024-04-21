@@ -8,7 +8,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap =  false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -21,7 +21,7 @@ vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 9
+vim.opt.scrolloff = 10
 -- vim.opt.signcolumn = "no"
 vim.opt.isfname:append("@-@")
 vim.opt.signcolumn = "yes"
@@ -33,6 +33,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.mouse = "a"
 vim.opt.cursorline = true
 vim.opt.ma = true
+vim.opt.tildeop = true
 
 
 
